@@ -68,7 +68,8 @@ a.text-primary {
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   font-family: "Playfair Display", serif;
-  color: #black; }
+  color: black; 
+}
 
 .btn {
   padding-top: 15px;
@@ -1542,7 +1543,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 
 .site-footer {
   font-size: 14px;
-  padding: 100px 0 70px 0; }
+  padding: 75px 0 10px 0; }
   .site-footer a {
     color: #000000;
     position: relative;

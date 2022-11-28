@@ -1,11 +1,7 @@
-<!-- /*
-* Template Name: UntreeStore
-* Template Author: Untree.co
-* Author URI: https://untree.co/
-* License: https://creativecommons.org/licenses/by/3.0/
-*/ -->
-<!doctype html>
-<html lang="en">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<! doctype html>
+<html lang="ko">
 
 <head>
 	<meta charset="utf-8">
@@ -31,7 +27,7 @@
 	<link rel="stylesheet" href="css/aos.css">
 	<link rel="stylesheet" href="css/style.css">
 
-	<title>UntreeStore Free HTML Template by Untree.co</title>
+	<title>TAG : Ticket And Goods</title>
 </head>
 
 <body>
@@ -70,46 +66,47 @@
 
 			<div class="container position-relative">
 				<div class="site-navigation text-center dark">
-					<a href="index.html" class="logo menu-absolute m-0">UntreeStore<span class="text-primary">.</span></a>
+					<a href="index.html" class="logo menu-absolute m-0" style="font-size:20px;">TAG<span class="text-primary">.</span></a>
 
 					<ul class="js-clone-nav pl-0 d-none d-lg-inline-block site-menu">
-						<li class="active"><a href="shop.html">Home</a></li>
+						<li class="active"><a href="shop.html">HOME</a></li>
 						<li class="has-children">
-							<a href="shop.html">Shop</a>
+							<a href="shop.html">공연</a>
 							<ul class="dropdown">
-								<li><a href="#">T-Shirt</a></li>
-								<li><a href="#">Underware</a></li>
-								<li><a href="#">Clothing</a></li>
-								<li><a href="#">Watches</a></li>
-								<li><a href="#">Shoes</a></li>
+								<li><a href="#">전체보기</a></li>
+								<li><a href="#">랭킹</a></li>
+
 							</ul>
 						</li>
 						<li class="has-children">
-							<a href="#">Pages</a>
+							<a href="#">굿즈</a>
 							<ul class="dropdown">
-								<li><a href="elements.html">Elements</a></li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="contact.html">Contact</a></li>
-								<li><a href="cart.html">Cart</a></li>
-								<li><a href="checkout.html">Checkout</a></li>
+								<li><a href="checkout.html">전체보기</a></li>
+								<li><a href="elements.html">인기상품</a></li>
 								
 								<li class="has-children">
-									<a href="#">Menu Two</a>
+									<a href="#">카테고리</a>
 									<ul class="dropdown">
-										<li><a href="#">T-Shirt</a></li>
-										<li><a href="#">Underware</a></li>
-										<li><a href="#">Clothing</a></li>
-										<li><a href="#">Watches</a></li>
-										<li><a href="#">Shoes</a></li>
-
+										<li><a href="#">의류</a></li>
+										<li><a href="#">포스터</a></li>
+										<li><a href="#">음반</a></li>
+										<li><a href="#">잡화</a></li>
 									</ul>
 								</li>
-								<li><a href="#">Menu Three</a></li>
+							</ul>
+						</li>
+						
+						<li class="has-children">
+							<a href="shop.html">공연장</a>
+							<ul class="dropdown">
+								<li><a href="#">YES24 라이브홀</a></li>
+								<li><a href="#">세종문화회관 대극장</a></li>
+								<li><a href="#">블루스퀘어 마스터카드홀</a></li>
 							</ul>
 						</li>
 
-						<li><a href="shop.html">Men</a></li>
-						<li><a href="shop.html">Women</a></li>
+						
+						<li><a href="shop.html">공지사항</a></li>
 						
 					</ul>
 
@@ -152,16 +149,16 @@
 
 	<div class="owl-carousel owl-single home-slider">
 		<div class="item">
-			<div class="untree_co-hero" style="background-image: url('images/hero-slider-1-min.jpg');">
+			<div class="untree_co-hero" style="background-image: url('images/헤더3.jpg');">
 				<div class="container">
 					<div class="row align-items-center">
 						<div class="col-lg-6">
 
-							<h1 class="mb-4 heading" data-aos="fade-up" data-aos-delay="100">Sell products the easy way with UntreeStore by <a href="https://untree.co">Untree.co</a></h1>
+							<h1 class="mb-4 heading" data-aos="fade-up" data-aos-delay="100">HARRY STYLES LOVE ON TOUR 2023 - Live in Seoul</h1>
 							<div class="mb-5 text-white desc mx-auto" data-aos="fade-up" data-aos-delay="200">
 							</div>
 
-							<p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-outline-black">Explore now</a></p>
+							<p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-outline-black">Ticketing now</a></p>
 
 						</div>
 					</div>
@@ -171,16 +168,16 @@
 
 
 		<div class="item">
-			<div class="untree_co-hero" style="background-image: url('images/hero-slider-2-min.jpg');">
+			<div class="untree_co-hero" style="background-image: url('images/헤더2.jpg');">
 				<div class="container">
 					<div class="row align-items-center">
 						<div class="col-lg-6">
 
-							<h1 class="mb-4 heading" data-aos="fade-up" data-aos-delay="100">The New Way To Sell Your Products by <a href="https://untree.co">Untree.co</a></h1>
+							<h1 class="mb-4 heading" data-aos="fade-up" data-aos-delay="100">Conan Gray Live in Seoul</h1>
 							<div class="mb-5 text-white desc mx-auto" data-aos="fade-up" data-aos-delay="200">
 							</div>
 
-							<p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-outline-black">Explore now</a></p>
+							<p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-outline-black">Ticketing now</a></p>
 
 						</div>
 					</div>
@@ -192,24 +189,26 @@
 
 
 
-
+<!-- 
 
 	<div class="untree_co-section">
 		<div class="container">
 
 
-			<div class="deal-hero overlay" style="background-image: url('images/hero-slider-4-min.jpg')"> 
+			<div class="deal-hero overlay" style="background-image: url('images/헤더3.jpg')"> 
 				<div class="deal-contents">
-					<span class="subtitle">Limited Offers 20% OFF</span>
-					<h2 class="title mb-4"><a href="#">Summer Promo</a></h2>
-					<p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum fuga incidunt laboriosam voluptas iure, delectus dignissimos facilis neque nulla earum.</p>
-					<a href="#" class="btn btn-black">Shop Now</a>
+					<span class="subtitle">해리 스타일스 첫 내한공연</span>
+					<h2 class="title mb-4"><a href="#">HARRY STYLES LOVE ON TOUR 2023 - Live in Seoul</a></h2>
+					<p class="mb-5">※ 본 공연은 가상계좌 입금 마감 시간이 예매 당일 23시 29분이오니, 무통장 입금 선택 예매 시 착오 없으시기 바랍니다.<br>
+									※ 본 공연은 네이버 쿠폰이 적용되지 않습니다.<br>
+									※ 라이브네이션 선예매는 무통장입금이 불가합니다. </p>
+					<a href="#" class="btn btn-black">Ticketing Now</a>
 				</div>
-			</div> <!-- /.deal-hero -->
-
+			</div>
 		</div>
 	</div>
 
+ 
 	<div class="untree_co-section">
 		<div class="container">
 
@@ -227,7 +226,7 @@
 						</a>
 						<h3 class="title"><a href="#">Dark Jacket</a></h3>
 						<div class="price">
-							<span>£69.00</span>
+							<span>Â£69.00</span>
 						</div>
 					</div>
 				</div>
@@ -245,7 +244,7 @@
 						</a>
 						<h3 class="title"><a href="#">Chino Bottoms</a></h3>
 						<div class="price">
-							<del>£99.00</del> &mdash; <span>£69.00</span>
+							<del>Â£99.00</del> &mdash; <span>Â£69.00</span>
 						</div>
 					</div>
 				</div>
@@ -256,7 +255,7 @@
 						</a>
 						<h3 class="title"><a href="#">Brown Shoe</a></h3>
 						<div class="price">
-							<span>£29.00</span>
+							<span>Â£29.00</span>
 						</div>
 					</div>
 				</div>
@@ -269,7 +268,7 @@
 						</a>
 						<h3 class="title"><a href="#">The Modern Sock</a></h3>
 						<div class="price">
-							<span>£29.00</span>
+							<span>Â£29.00</span>
 						</div>
 					</div>
 
@@ -285,7 +284,7 @@
 						</a>
 						<h3 class="title"><a href="#">Double Knit Sweater</a></h3>
 						<div class="price">
-							<del>£99.00</del> &mdash; <span>£69.00</span>
+							<del>Â£99.00</del> &mdash; <span>Â£69.00</span>
 						</div>
 					</div>
 
@@ -302,7 +301,7 @@
 						</a>
 						<h3 class="title"><a href="#">The Murray</a></h3>
 						<div class="price">
-							<del>£99.00</del> &mdash; <span>£69.00</span>
+							<del>Â£99.00</del> &mdash; <span>Â£69.00</span>
 						</div>
 					</div>
 
@@ -310,7 +309,7 @@
 				</div>
 			</div>
 		</div>
-	</div> <!-- /.untree_co-section -->
+	</div>
 
 
 	<div class="container">
@@ -323,15 +322,16 @@
 				<p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum fuga incidunt laboriosam voluptas iure, delectus dignissimos facilis neque nulla earum.</p>
 				<a href="#" class="btn btn-black">Shop Now</a>
 			</div>
-		</div> <!-- /.deal-hero -->
+		</div>
 
 	</div>
-
+-->
+<br>
 	<div class="untree_co-section">
 		<div class="container">
 			<div class="row mb-5 align-items-center">
 				<div class="col-md-6">
-					<h2 class="h3">Popular Items</h2>        
+					<h2 class="h3">Tickets</h2>        
 				</div>
 				<div class="col-sm-6 carousel-nav text-sm-right">
 					<a href="#" class="prev js-custom-prev-v2">
@@ -354,14 +354,12 @@
 				<div class="item">
 					<div class="product-item">
 						<a href="shop-single.html" class="product-img">
-							<div class="label sale top-right">
-								<div class='content'>Sale</div>
-							</div>
-							<img src="images/products/watch-1-min.jpg" alt="Image" class="img-fluid">
+
+							<img src="images/페더엘리에스.jpg" alt="Image" class="img-fluid">
 						</a>
-						<h3 class="title"><a href="#">The Murray</a></h3>
+						<h3 class="title"><a href="#">Love in Seoul 2022 : Peder Elias</a></h3>
 						<div class="price">
-							<del>£99.00</del> &mdash; <span>£69.00</span>
+							<span>￦99,000</span>
 						</div>
 					</div>
 				</div> <!-- /.item -->
@@ -370,17 +368,13 @@
 				<div class="item">
 					<div class="product-item">
 						<a href="shop-single.html" class="product-img">
-
-							<div class="label new top-right">
-								<div class='content'>New</div>
-							</div>
 
 							
-							<img src="images/products/jacket-1-min.jpg" alt="Image" class="img-fluid">
+							<img src="images/크리스토퍼.jpg" alt="Image" class="img-fluid">
 						</a>
-						<h3 class="title"><a href="#">Dark Jacket</a></h3>
+						<h3 class="title"><a href="#">Love in Seoul 2022 : Christoper </a></h3>
 						<div class="price">
-							<span>£69.00</span>
+							<span>￦110,000</span>
 						</div>
 					</div>
 				</div> <!-- /.item -->
@@ -389,18 +383,12 @@
 				<div class="item">
 					<div class="product-item">
 						<a href="shop-single.html" class="product-img">
-							<div class="label new top-right">
-								<div class='content'>New</div>
-							</div>
 
-							<div class="label sale top-right second">
-								<div class='content'>Sale</div>
-							</div>
-							<img src="images/products/bottoms-1-min.jpg" alt="Image" class="img-fluid">
+							<img src="images/존케이.jpg" alt="Image" class="img-fluid">
 						</a>
-						<h3 class="title"><a href="#">Chino Bottoms</a></h3>
+						<h3 class="title"><a href="#">Love in Seoul 2022 : John K</a></h3>
 						<div class="price">
-							<del>£99.00</del> &mdash; <span>£69.00</span>
+							<span>￦88,000</span>
 						</div>
 					</div>
 				</div> <!-- /.item -->
@@ -408,11 +396,11 @@
 				<div class="item">
 					<div class="product-item">
 						<a href="shop-single.html" class="product-img">
-							<img src="images/products/sock-1-min.jpg" alt="Image" class="img-fluid">
+							<img src="images/콜바넴.jpg" alt="Image" class="img-fluid">
 						</a>
-						<h3 class="title"><a href="#">The Modern Sock</a></h3>
+						<h3 class="title"><a href="#">Love in Seoul 2022 : Call me by your name</a></h3>
 						<div class="price">
-							<span>£29.00</span>
+							<span>￦132,000</span>
 						</div>
 					</div>
 				</div> <!-- /.item -->
@@ -420,6 +408,90 @@
 			</div>
 		</div> <!-- /.container -->
 	</div> <!-- /.untree_co-section -->  
+
+
+	<div class="untree_co-section">
+		<div class="container">
+			<div class="row mb-5 align-items-center">
+				<div class="col-md-6">
+					<h2 class="h3">Goods</h2>        
+				</div>
+				<div class="col-sm-6 carousel-nav text-sm-right">
+					<a href="#" class="prev js-custom-prev-v2">
+						<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+							<path fill-rule="evenodd" d="M8.354 11.354a.5.5 0 0 0 0-.708L5.707 8l2.647-2.646a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708 0z"/>
+							<path fill-rule="evenodd" d="M11.5 8a.5.5 0 0 0-.5-.5H6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5z"/>
+						</svg>
+					</a>
+					<a href="#" class="next js-custom-next-v2">
+						<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+							<path fill-rule="evenodd" d="M7.646 11.354a.5.5 0 0 1 0-.708L10.293 8 7.646 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0z"/>
+							<path fill-rule="evenodd" d="M4.5 8a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/>
+						</svg>
+					</a>
+				</div>
+			</div> <!-- /.heading -->
+			<div class="owl-3-slider owl-carousel">
+				<div class="item">
+					<div class="product-item">
+						<a href="shop-single.html" class="product-img">
+
+							<img src="images/카세트.png" alt="Image" class="img-fluid">
+						</a>
+						<h3 class="title"><a href="#">harry's house</a></h3>
+						<div class="price">
+							<span>￦46,000</span>
+						</div>
+					</div>
+				</div> <!-- /.item -->
+
+
+				<div class="item">
+					<div class="product-item">
+						<a href="shop-single.html" class="product-img">
+
+							
+							<img src="images/티셔츠.png" alt="Image" class="img-fluid">
+						</a>
+						<h3 class="title"><a href="#">Harry Styles FINE LINE</a></h3>
+						<div class="price">
+							<span>￦35,000</span>
+						</div>
+					</div>
+				</div> <!-- /.item -->
+
+
+				<div class="item">
+					<div class="product-item">
+						<a href="shop-single.html" class="product-img">
+
+							<img src="images/티셔츠2.png" alt="Image" class="img-fluid">
+						</a>
+						<h3 class="title"><a href="#">Harry Styles LOVE ON TOUR 2020 : T-shirt</a></h3>
+						<div class="price">
+							<span>￦34,000</span>
+						</div>
+					</div>
+				</div> <!-- /.item -->
+
+				<div class="item">
+					<div class="product-item">
+						<a href="shop-single.html" class="product-img">
+							<img src="images/음반.png" alt="Image" class="img-fluid">
+						</a>
+						<h3 class="title"><a href="#">Watermelon sugar - LP</a></h3>
+						<div class="price">
+							<span>￦58,000</span>
+						</div>
+					</div>
+				</div> <!-- /.item -->
+				
+			</div>
+		</div> <!-- /.container -->
+	</div> <!-- /.untree_co-section -->  
+
 
 
 
@@ -437,8 +509,8 @@
 								<path fill-rule="evenodd" d="M12 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 1a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
 							</svg>
 						</div>
-						<h3>Worldwide Delivery</h3>
-						<p>Far far away, behind the word mountains, far from the countries.</p>
+						<h3>공연 할인 정보</h3>
+						<p>장애인·국가 유공자 30% 할인</p>
 					</div>
 				</div>
 				<div class="col-12 col-sm-6 col-md-4 mb-3 mb-md-0">
@@ -450,8 +522,10 @@
 								<path d="M7.411 8.034a.5.5 0 0 1 .493-.417h.156a.5.5 0 0 1 .492.414l.347 2a.5.5 0 0 1-.493.585h-.835a.5.5 0 0 1-.493-.582l.333-2z"/>
 							</svg>
 						</div>
-						<h3>Secure Payments</h3>
-						<p>Far far away, behind the word mountains, far from the countries.</p>
+						<h3>이용 안내</h3>
+						<p>
+								평일 09:00~18:00 / 토요일 09:00~17:00 <br>
+								(점심시간: 12:00~13:00 / 일요일, 공휴일 휴무)</p>
 					</div>
 				</div>
 				<div class="col-12 col-sm-6 col-md-4 mb-3 mb-md-0">
@@ -462,8 +536,11 @@
 								<path fill-rule="evenodd" d="M7.854.146a.5.5 0 0 0-.708 0l-2.5 2.5a.5.5 0 0 0 0 .708l2.5 2.5a.5.5 0 1 0 .708-.708L5.707 3 7.854.854a.5.5 0 0 0 0-.708z"/>
 							</svg>
 						</div>
-						<h3>Simple Returns</h3>
-						<p>Far far away, behind the word mountains, far from the countries.</p>
+						<h3>판매 상담 및 계약 </h3>
+						<p>
+							담당자와 공연 판매 대행 관련 상담 및 계약을 진행합니다. <br>
+							연간계약과 단일계약 중 선택하여 계약하고 관련 서류 작업을 완료합니다. 
+						</p>
 					</div>
 				</div>
 			</div>
@@ -474,24 +551,30 @@
 
 
 		<div class="container">
+		<!-- 
 			<div class="row justify-content-between">
+				 
 				<div class="col-lg-5">
 					<div class="widget mb-4">
-						<h3 class="mb-2">About UntreeStore</h3>
+						  <h3 class="mb-2">About UntreeStore</h3>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate modi cumque rem recusandae quaerat at asperiores beatae saepe repudiandae quam rerum aspernatur dolores et ipsa obcaecati voluptates libero</p>
+						 -->
+					<!-- 
 					</div>
 					<div class="widget">
+						
 						<h3>Join our mailing list and receive exclusives</h3>
 						<form action="#" class="subscribe">
 							<div class="d-flex">
 								<input type="email" class="form-control" placeholder="Email address">
 								<input type="submit" class="btn btn-black" value="Subscribe">
 							</div>
-						</form>
-
-						
+						</form>	
+									
 					</div>
 				</div>
+				-->	
+<!-- 				
 				<div class="col-lg-2">
 					<div class="widget">
 						<h3>Help</h3> 
@@ -528,8 +611,8 @@
 				</div>
 				
 			</div>
-
-
+-->
+<!-- 
 			<div class="row mt-5">
 				<div class="col-12 text-center">
 					<ul class="list-unstyled social">
@@ -539,14 +622,18 @@
 						<li><a href="#"><span class="icon-twitter"></span></a></li>
 					</ul>
 				</div>
+ -->
 				<div class="col-12 text-center copyright">
-					<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a> <!-- License information: https://untree.co/license/ -->
+					<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved.<!-- License information: https://untree.co/license/ -->
 					</p>
 
 				</div>
 			</div>
 		</div> <!-- /.container -->
 	</div> <!-- /.site-footer -->
+	
+<br>
+<br>
 
 	<div id="overlayer"></div>
 	<div class="loader">
