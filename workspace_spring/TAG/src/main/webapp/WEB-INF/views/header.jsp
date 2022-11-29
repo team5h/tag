@@ -77,10 +77,10 @@
 
 			<div class="container position-relative">
 				<div class="site-navigation text-center dark">
-					<a href="index.html" class="logo menu-absolute m-0" style="font-size:20px;">TAG<span class="text-primary">.</span></a>
+					<a href="home" class="logo menu-absolute m-0" style="font-size:20px;">TAG<span class="text-primary">.</span></a>
 
 					<ul class="js-clone-nav pl-0 d-none d-lg-inline-block site-menu">
-						<li class="active"><a href="shop.html">HOME</a></li>
+						<li class="active"><a href="home">HOME</a></li>
 						<li class="has-children">
 							<a href="shop.html">공연</a>
 							<ul class="dropdown">

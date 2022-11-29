@@ -13,7 +13,7 @@ public class HomeController {
 	
 	@RequestMapping("/home")
 	public String home() {
-		return "test";
+		return "index";
 	}
 
 }
