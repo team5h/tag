@@ -8,11 +8,12 @@
 		<version>3.0.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>test-2</artifactId>
+	<groupId>co.kr</groupId>
+	<artifactId>itwill</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>test-2</name>
-	<description>Demo project for Spring Boot</description>
+	<packaging>war</packaging>
+	<name>TAG</name>
+	<description>final project - team5</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -46,7 +47,8 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-			<!-- 사용자가 추가한 라이브러리(의존성) 시작 -->
+		
+		<!-- 사용자가 추가한 라이브러리(의존성) 시작 -->
 		
 		<!-- JSP(View 페이지) -->
 		<dependency>
@@ -79,10 +81,9 @@
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
 		</dependency>
+	
 		<!-- 사용자가 추가한 라이브러리(의존성) 끝 -->
 	
-	
-		
 	</dependencies>
 
 	<build>
