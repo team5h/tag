@@ -32,16 +32,16 @@
 		</div>
 	</div>
 
-	<script src="js/jquery-3.4.1.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.animateNumber.min.js"></script>
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/jquery.fancybox.min.js"></script>
-	<script src="js/jquery.sticky.js"></script>
-	<script src="js/aos.js"></script>
-	<script src="js/custom.js"></script>
+	<script src="/js/jquery-3.4.1.min.js"></script>
+	<script src="/js/popper.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/owl.carousel.min.js"></script>
+	<script src="/js/jquery.animateNumber.min.js"></script>
+	<script src="/js/jquery.waypoints.min.js"></script>
+	<script src="/js/jquery.fancybox.min.js"></script>
+	<script src="/js/jquery.sticky.js"></script>
+	<script src="/js/aos.js"></script>
+	<script src="/js/custom.js"></script>
 	
 </body>
 
