@@ -1,23 +1,5 @@
 INDEX VERSION 1.131
-E:\team5\workspace_spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\794288794.index
-\spring04_myMelon\src\main\java
-E:\team5\workspace_spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\463529301.index
+C:\Users\USER\OneDrive\문서\team5\tag\workspace_spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1083030517.index
 \TAG\src\main\java
-E:\team5\workspace_spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1738875616.index
-\test\src\main\java
-E:\team5\workspace_spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3956921772.index
-\TAG2\src\main\java
-E:\team5\workspace_spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\799602470.index
-\test\src\main\java
-E:\team5\workspace_spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1904506242.index
-\test\src\main\java
-E:\team5\workspace_spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1823557430.index
-\test\src\main\java
-E:\team5\workspace_spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3817695613.index
-\Spring07_myShop\src\main\java
-E:\team5\workspace_spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1254795125.index
-\ticketsandgoods\src\main\java
-E:\team5\workspace_spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\530064317.index
-\test-2\src\main\java
-E:\team5\workspace_spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2699132026.index
-\Test2\src\main\java
+C:\Users\USER\OneDrive\문서\team5\tag\workspace_spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\463529301.index
+\TAG\src\main\java

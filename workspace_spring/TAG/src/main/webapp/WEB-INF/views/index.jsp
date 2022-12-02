@@ -106,7 +106,7 @@
 						</li>
 
 						
-						<li><a href="shop.html">공지사항</a></li>
+						<li><a href="#" onclick="location.href='notice/list'">공지사항</a></li>
 						
 					</ul>
 

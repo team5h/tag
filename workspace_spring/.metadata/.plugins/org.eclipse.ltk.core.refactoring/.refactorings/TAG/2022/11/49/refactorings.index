@@ -1,2 +1,19 @@
 1669701397051	Rename resource 'test.jsp'
 1669702513591	Delete element
+1669704658155	Rename type 'TicketsandgoodsApplication'
+1669704677784	Rename type 'TicketsandgoodsApplicationTests'
+1669707949114	Rename package 'co.kr.itwill'
+1669707967722	Rename package 'kr.co.notice'
+1669708507344	Rename type 'noticeCont'
+1669708514317	Rename type 'noticeDAO'
+1669708521533	Rename type 'noticeDTO'
+1669712314864	Rename resource 'noticeRead.jsp'
+1669712329688	Rename resource 'detail'
+1669712338550	Rename resource 'noticeList.jsp'
+1669712346022	Rename resource 'noticeIns.jsp'
+1669712352906	Delete element
+1669712355255	Delete element
+1669712357501	Delete element
+1669773071024	Rename package 'co.kr.itwill'
+1669774128651	Move file
+1669774195406	Move file
