@@ -10,7 +10,16 @@
 	<script src="/js/jquery-3.4.1.min.js"></script>
 	<script src="/js/jquery.cookie.js"></script>
 	<style>
-		.on{background:blue;}
+		.on{background:black !important;} /* class="on" 클릭시 색 변경 */
+		#mapContainer input{border:none; font-size:0px; width:12px; height:12px; margin:0; padding:0;} /* font-size:0px; : id="mapContainer"의 value 안보이게 하기 */
+		
+		table{font-size:10px; border-spacing: 0;}
+		td{text-align:right; vertical-align:bottom; }
+		
+		.StandingR{background:palegreen;} /* 스탠딩R석 색상 */
+		.R{background:mediumslateblue;} /* 지정좌석R석 색상 */
+		.S{background:dodgerblue;} /* 지정좌석S석 색상 */
+		.A{background:darkcyan;} /* 지정좌석A석 색상 */
 	</style>
 </head>
 <body>
@@ -22,88 +31,42 @@
 <div id="mapContainer">
 <!-- Ajax 영역 시작 -->
 
-<h4>지정석 2층</h4>
-<p>객석 2층은 지정좌석제입니다.</p>
-<div id="rseatX" style="display: inline-block;">
-	<h4>지정좌석 X구역</h4>
-	<table style="border-spacing: 0;">
-		<tr>
-		<!-- X구역 행마다 들어가는 빈공간 배열 선언 -->
-		<c:set var="nullX" value="<%=new int[] {0,1,2,3,3,5,6} %>"/>
-		<!-- "seatX" 좌석의 고유번호(flags의 갯수와 일치) -->
-		<c:set var="seatX" value="0"/>
-		
-		<c:forEach var="r" begin="1" end="${fn:length(nullX)}" step="1">
-			<c:forEach var="null" begin="1" end="${nullX[r-1]}" step="1">
-				<td></td>
-			</c:forEach><!-- nullX end -->
-			<c:forEach var="c" begin="1" end="${15-nullX[r-1]}" step="1">
-				<td>
-					<!-- ${seatX} 1씩 늘어나게하기 -->
-					<c:set var="seatX" value="${seatX+1}"/>
-					<input type="button" id=btnX${seatX} name=btnX${seatX} value="${c}" style="width:15px; height:15px; margin:0; padding:0;" onclick="seatAdd(this, 'X', ${seatX})">
-					<c:if test="${c == (15-nullX[r-1])}">
-						<c:out value="${r}열"/>
-						<tr></tr>
-					</c:if>
+	<h4>스탠딩 1층</h4>
+	<p>스탠딩은 실제 좌석과 다르며 예매시 지정하는 번호가 입장 번호 순서입니다. 빠른 번호를 예매 할수록 입장 순서가 빨라집니다.</p>
+	<div id="standA" style="display: inline-block;">
+		<h4>스탠딩 A구역</h4>
+		<table style="border-spacing: 0;">
+			<tr>
+			<c:forEach var="seatA" begin="1" end="825" step="1">
+				<td style="width:15px; height:15px;">
+					<input type="button" id=btnA${seatA} name=btnA${seatA} value="${seatA}" onclick="standAdd(this, 'A', ${seatA})">
 				</td>
-			</c:forEach><!-- c end -->
-		</c:forEach><!-- r end -->
-		</tr>
-	</table>
-</div>
-<div id="rseatY" style="display: inline-block;">
-	<h4>지정좌석 Y구역</h4>
-	<table style="border-spacing: 0;">
-		<tr>
-		<!-- Y구역 행마다 들어가는 빈공간 배열 선언 -->
-		<c:set var="nullYL"   value="<%=new int[] {4,3,3,2,1,0,1} %>"/><!-- Left -->
-		<c:set var="nullYR"   value="<%=new int[] {3,3,2,1,1,0,1} %>"/><!-- Right -->
-		<c:set var="nullYAll"   value="<%=new int[] {7,6,5,3,2,0,2} %>"/><!-- L+R -->
-		<!-- "seatY" 좌석의 고유번호(flags의 갯수와 일치) -->
-		<c:set var="seatY" value="0"/>
-		
-		<c:forEach var="r" begin="1" end="${fn:length(nullYL)}" step="1">
-			<c:forEach var="nullY" begin="1" end="${nullYL[r-1]}" step="1">
-				<td></td>
-			</c:forEach><!-- nullYL end -->
-			<c:forEach var="c" begin="1" end="${28-nullYAll[r-1]}" step="1">
-				<c:choose><%-- if else문 --%>
-					<c:when test="${r == 7 && c <= 11}"><!-- 7열 11번째 좌석까지 생성 -->
-						<td>
-							<c:set var="seatY" value="${seatY+1}"/>
-							<input type="button" id=btnY${seatY} name=btnY${seatY} value="${c}" style="width:15px; height:15px; margin:0; padding:0;" onclick="seatAdd(this, 'Y', ${seatY})">
-						</td>
-					</c:when>
-					<c:when test="${r == 7 && c >= 16}"><!-- 7열 16번째 좌석부터 생성 -->
-				    	<td>
-							<c:set var="seatY" value="${seatY+1}"/>
-							<input type="button" id=btnY${seatY} name=btnY${seatY} value="${c-4}" style="width:15px; height:15px; margin:0; padding:0;" onclick="seatAdd(this, 'Y', ${seatY})">
-						</td>
-					</c:when>
-					<c:when test="${r == 7 && c > 11 && c < 16}"><!-- 7열 빈 좌석 생성 -->
-				    	<td></td>
-					</c:when>
-					<c:otherwise><!-- 그 외 일반 -->
-				    	<td>
-							<c:set var="seatY" value="${seatY+1}"/>
-							<input type="button" id=btnY${seatY} name=btnY${seatY} value="${c}" style="width:15px; height:15px; margin:0; padding:0;" onclick="seatAdd(this, 'Y', ${seatY})">
-						</td>
-				  	</c:otherwise>
-				</c:choose><!-- choose end -->
-			</c:forEach><!-- c end -->
-			<c:forEach var="nullR" begin="1" end="${nullYR[r-1]+1}" step="1">
-				<td>
-					<c:if test="${nullR == nullYR[r-1]+1 }">
-						<c:out value="${r}열"/>
-						<tr></tr>
-					</c:if>
+				<c:if test="${seatA mod 25 == 0}">
+				<!-- 테이블 한줄에 5줄씩 -->
+					<tr></tr>
+				</c:if>
+			</c:forEach>
+			</tr>
+		</table>
+	</div>
+	<div id="standB" style="display: inline-block; margin-left:40px;">
+		<h4>스탠딩 B구역</h4>
+		<table style="border-spacing: 0;">
+			<tr>
+			<c:forEach var="seatB" begin="1" end="825" step="1">
+				<td style="width:15px; height:15px;">
+					<input type="button" id=btnB${seatB} name=btnB${seatB} value="${seatB}" onclick="standAdd(this, 'B', ${seatB})">
 				</td>
-			</c:forEach><!-- nullYR end -->
-		</c:forEach><!-- r end -->
-		</tr>
-	</table>
-</div>
+				<c:if test="${seatB mod 25 == 0}">
+				<!-- 테이블 한줄에 5줄씩 -->
+					<tr></tr>
+				</c:if>
+			</c:forEach>
+			</tr>
+		</table>
+	</div>
+
+
 
 <!-- Ajax 영역 끝 -->
 </div>
@@ -120,10 +83,11 @@
 <!-- JavaScript -->
 <script type="text/javascript">
 //전역변수 선언
-var flagsA = new Array(601); //좌석tb의 좌석개수+1 (배열[0]번째는 쓰지않는다)
-var flagsB = new Array(601);
+var flagsA = new Array(826); //좌석tb의 좌석개수+1 (배열[0]번째는 쓰지않는다)
+var flagsB = new Array(826);
 var flagsX = new Array(86);
 var flagsY = new Array(168);
+var flagsZ = new Array(86);
 
 //flags 초기 설정
 //A구역
@@ -142,6 +106,26 @@ for(let i = 0; i < flagsX.length; i++){
 for(let i = 0; i < flagsY.length; i++){
 	flagsY[i] = true;
 }//for end
+//Z구역
+for(let i = 0; i < flagsZ.length; i++){
+	flagsZ[i] = true;
+}//for end
+
+//페이지로딩시 적용내용
+$(document).ready(function(){
+	//첫로딩에 무조건 map1F을 띄우고 class='StandingR' 생성
+	for(let i = 1; i < flagsA.length; i++){ //A,B구역 전체 R등급
+		$("#btnA"+i).addClass("StandingR");
+		$("#btnB"+i).addClass("StandingR");
+	}//for end
+});//ready() end
+
+
+
+
+
+
+
 
 //미니맵 1층 전환 ajax
 $(document).ready(function(){
@@ -156,6 +140,13 @@ $(document).ready(function(){
 			,success : function(result){
 				$("#mapContainer").empty();
 				$("#mapContainer").html(result);
+				
+				//css 등급별 색깔 적용
+				for(let i = 1; i < flagsA.length; i++){ //A,B구역 전체 R등급
+					$("#btnA"+i).addClass("StandingR");
+					$("#btnB"+i).addClass("StandingR");
+				}//for end
+				
 				//모든 flag=true로 바꾸기
 				for(let i = 0; i < flagsA.length; i++){
 					flagsA[i] = true;
@@ -176,7 +167,6 @@ $(document).ready(function(){
 	});//click() end
 });//ready() end
 
-/* ------------------------ test ---------------------------------- */
 
 //미니맵 2층 전환 ajax
 $(document).ready(function(){
@@ -191,11 +181,54 @@ $(document).ready(function(){
 			,success : function(result){
 				$("#mapContainer").empty();
 				$("#mapContainer").html(result);
-				//모든 flag=true로 바꾸기
-				for(let i = 0; i < flagsA.length; i++){
-					flagsA[i] = true;
-					flagsB[i] = true;
+				
+				//등급과 등급별 색깔 적용
+				for(let i = 1; i < flagsX.length; i++){ //X구역 R등급, S등급, A등급
+					if(i <= 29){
+						$("#btnX"+i).addClass("R");
+						$("#btnX"+i)[0].style.background = "mediumslateblue"; //R등급 보라색
+					}else if(i > 29 && i <= 76){
+						$("#btnX"+i).addClass("S");
+						$("#btnX"+i)[0].style.background = "dodgerblue"; //S등급 청회색
+					}else if(i > 76){
+						$("#btnX"+i).addClass("A");
+						$("#btnX"+i)[0].style.background = "darkcyan"; //A등급 민트
+					}//if end
 				}//for end
+				for(let i = 1; i < flagsY.length; i++){ //Y구역 R등급, S등급, A등급
+					if(i <= 43){
+						$("#btnY"+i).addClass("R");
+						$("#btnY"+i)[0].style.background = "mediumslateblue"; //R등급 보라색
+					}else if(i > 43 && i <= 145){
+						$("#btnY"+i).addClass("S");
+						$("#btnY"+i)[0].style.background = "dodgerblue"; //S등급 청회색
+					}else if(i > 145){
+						$("#btnY"+i).addClass("A");
+						$("#btnY"+i)[0].style.background = "darkcyan"; //A등급 민트
+					}//if end
+				}//for end
+				for(let i = 1; i < flagsZ.length; i++){ //Z구역 R등급, S등급, A등급
+					if(i <= 29){
+						$("#btnZ"+i).addClass("R");
+						$("#btnZ"+i)[0].style.background = "mediumslateblue"; //R등급 보라색
+					}else if(i > 29 && i <= 76){
+						$("#btnZ"+i).addClass("S");
+						$("#btnZ"+i)[0].style.background = "dodgerblue"; //S등급 청회색
+					}else if(i > 76){
+						$("#btnZ"+i).addClass("A");
+						$("#btnZ"+i)[0].style.background = "darkcyan"; //A등급 민트
+					}//if end
+				}//for end
+				
+				//모든 flag=true로 바꾸기
+				for(let i = 0; i < flagsX.length; i++){
+					flagsX[i] = true;
+					flagsZ[i] = true; //X구역과 Z구역 좌석 수는 같다
+				}//for end
+				for(let i = 0; i < flagsY.length; i++){
+					flagsY[i] = true;
+				}//for end
+				
 				
 				//모든 class="on" 제거
 				$("input").removeClass("on");
@@ -211,61 +244,13 @@ $(document).ready(function(){
 	});//click() end
 });//ready() end
 
-/* ------------------------ test ---------------------------------- */
+/* ------------------------ test start ---------------------------------- */
 
-/*
-//미니맵 2층 전환 ajax
-$("#map2F").click(function(){ //map1F버튼 id받아오기
-	$.ajax({
-		 url		:"map2F.do"
-		,type		:"get"
-		,dataType	:"html"
-		,error		:function(error){
-			alert("에러:" + error);
-		}//error callback 함수
-		,success	:function(result){
-			//alert("성공: " + result);
-			var str="";
-			str += " <h4>지정석 2층</h4> ";
-			str += " <table> ";
-			str += " 	<tr> ";
-			str += " 	<c:forEach var='r' begin='1' end='5' step='1' varStatus='status'> ";
-			str += " 		<c:forEach var='c' begin='1' end='5' step='1'> ";
-			str += " 			<td> ";
-			str += " 				<c:set var='seatNo' value='${(r-1)*5+c}'/> ";
-			str += " 				<input type='button' id=btn${seatNo} name=btn${seatNo} value='${seatNo}' style='width:30px;' onclick='seatAdd(this)'> ";
-			str += " 				<c:if test='${c mod 5 == 0}'> ";
-			str += " 					<!-- 테이블 한줄에 5줄씩 --> ";
-			str += " 					<c:out value='${r}열'/> ";
-			str += " 					<tr></tr> ";
-			str += " 				</c:if> ";
-			str += " 			</td> ";
-			str += " 		</c:forEach> ";
-			str += " 	</c:forEach> ";
-			str += " 	</tr> ";
-			str += " </table> ";
-			
-			$("#mapContainer").empty();
-			$("#mapContainer").html(str);
-			
-			//모든 flagA=true flagB=true로 바꾸기
-			for(let i = 0; i < flagsA.length; i++){
-				flagsA[i] = true;
-				flagsB[i] = true;
-			}//for end
-			
-			//모든 class="on" 제거
-			$("input").removeClass("on");
-			
-			//<div id="panel">안에 비우기
-			$("#panel").empty();
-		}//success callback 함수
-	});//ajax() end
-});//click() end
-*/
+/* ------------------------ test end ---------------------------------- */
 
-//좌석을 누르면
-function seatAdd(SeatNum, section, flagNum){ //좌석번호, 구역이름, 버튼고유번호
+
+//스탠딩 좌석을 누르면
+function standAdd(SeatNum, section, flagNum){ //좌석번호, 구역이름, 버튼고유번호
 	var snum=$(SeatNum).val(); //number 좌석번호
 	var swt=false; //switch flag=on/off 해주는 불린값
 	
@@ -282,6 +267,33 @@ function seatAdd(SeatNum, section, flagNum){ //좌석번호, 구역이름, 버�
 			}else{ //좌석선택을 해제할 때
 				flagsB[flagNum]=true; swt=false; break;
 			}//if end
+		default :
+			alert("배정된 구역 없음!"); break;
+	}//switch end
+	
+	if(swt){ //좌석을 선택할 때
+		let span="";
+		span += "<span class='span";
+		span += 				section+flagNum;
+		span += 						"' style='margin: 30px 10px'>";
+		span += "R석 1층-스탠딩"+section+"구역 입장번호-";
+		span += snum;
+		span += "</span>";
+		$("#btn"+section+flagNum).addClass("on"); //#btnA+seatNo에 class="on" 추가
+		$("#panel").append(span); //<div id="panel">안에 <span class=span+str></span> 생성
+	}else{ //좌석선택을 해제할 때
+		$("#btn"+section+flagNum).removeClass("on"); //#btn+seatNo에 class="on" 제거
+		$("span").remove(".span"+section+flagNum); //<span class=span+str></span> 제거
+	}//if end
+}//standAdd() end
+
+//지정좌석을 누르면
+function rseatAdd(SeatNum, section, row, flagNum){ //좌석번호, 구역이름, 열이름, 버튼고유번호
+	var snum=$(SeatNum).val(); //number 좌석번호
+	var swt=false; //switch flag=on/off 해주는 불린값
+	var grade=$(SeatNum).attr('class'); //좌석등급을 클래스명으로 가져옴
+	
+	switch (section){
 		case "X" : 
 			if(flagsX[flagNum]){ //좌석을 선택할 때
 				flagsX[flagNum]=false; swt=true; break;
@@ -294,6 +306,12 @@ function seatAdd(SeatNum, section, flagNum){ //좌석번호, 구역이름, 버�
 			}else{ //좌석선택을 해제할 때
 				flagsY[flagNum]=true; swt=false; break;
 			}//if end
+		case "Z" : 
+			if(flagsZ[flagNum]){ //좌석을 선택할 때
+				flagsZ[flagNum]=false; swt=true; break;
+			}else{ //좌석선택을 해제할 때
+				flagsZ[flagNum]=true; swt=false; break;
+			}//if end
 		default :
 			alert("배정된 구역 없음!"); break;
 	}//switch end
@@ -303,7 +321,7 @@ function seatAdd(SeatNum, section, flagNum){ //좌석번호, 구역이름, 버�
 		span += "<span class='span";
 		span += 				section+flagNum;
 		span += 						"' style='margin: 30px 10px'>";
-		span += section+"구역 입장번호-";
+		span += grade+"석 2층-"+section+"구역"+row+"열 좌석번호-";
 		span += snum;
 		span += "</span>";
 		$("#btn"+section+flagNum).addClass("on"); //#btnA+seatNo에 class="on" 추가
@@ -312,7 +330,8 @@ function seatAdd(SeatNum, section, flagNum){ //좌석번호, 구역이름, 버�
 		$("#btn"+section+flagNum).removeClass("on"); //#btn+seatNo에 class="on" 제거
 		$("span").remove(".span"+section+flagNum); //<span class=span+str></span> 제거
 	}//if end
-}//seatAdd() end
+}//rseatAdd() end
+
 
 //다시선택 버튼을 누르면
 function reSelect(){
@@ -329,6 +348,9 @@ function reSelect(){
 	for(let i = 0; i < flagsY.length; i++){
 		flagsY[i] = true;
 	}//for end
+	for(let i = 0; i < flagsZ.length; i++){
+		flagsZ[i] = true;
+	}//for end
 	
 	//모든 class="on" 제거
 	$("input").removeClass("on");
@@ -336,8 +358,6 @@ function reSelect(){
 	//<div id="panel">안에 비우기
 	$("#panel").empty();
 }//reSelect()
-
-
 
 
 

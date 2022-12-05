@@ -14,11 +14,11 @@
 		<h4>스탠딩 A구역</h4>
 		<table style="border-spacing: 0;">
 			<tr>
-			<c:forEach var="seatA" begin="1" end="600" step="1">
+			<c:forEach var="seatA" begin="1" end="825" step="1">
 				<td style="width:15px; height:15px;">
-					<input type="button" id=btnA${seatA} name=btnA${seatA} value="${seatA}" style="width:15px; height:15px; margin:0; padding:0;" onclick="seatAdd(this, 'A', ${seatA})">
+					<input type="button" id=btnA${seatA} name=btnA${seatA} value="${seatA}" onclick="standAdd(this, 'A', ${seatA})">
 				</td>
-				<c:if test="${seatA mod 20 == 0}">
+				<c:if test="${seatA mod 25 == 0}">
 				<!-- 테이블 한줄에 5줄씩 -->
 					<tr></tr>
 				</c:if>
@@ -30,11 +30,11 @@
 		<h4>스탠딩 B구역</h4>
 		<table style="border-spacing: 0;">
 			<tr>
-			<c:forEach var="seatB" begin="1" end="600" step="1">
+			<c:forEach var="seatB" begin="1" end="825" step="1">
 				<td style="width:15px; height:15px;">
-					<input type="button" id=btnB${seatB} name=btnB${seatB} value="${seatB}" style="width:15px; height:15px; margin:0; padding:0;" onclick="seatAdd(this, 'B', ${seatB})">
+					<input type="button" id=btnB${seatB} name=btnB${seatB} value="${seatB}" onclick="standAdd(this, 'B', ${seatB})">
 				</td>
-				<c:if test="${seatB mod 20 == 0}">
+				<c:if test="${seatB mod 25 == 0}">
 				<!-- 테이블 한줄에 5줄씩 -->
 					<tr></tr>
 				</c:if>
