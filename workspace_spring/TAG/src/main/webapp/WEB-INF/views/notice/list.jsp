@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="../header.jsp" %>
 
-<!-- 본문영역 -->
+<%@ include file="../header.jsp" %>
+<%@ include file="./ssi.jsp" %>
+
+<!-- 본문 시작 -->
 <br>
 <br>
 <br>
@@ -27,7 +29,7 @@
 		<tr>
 			<td>${row.n_no}</td>
 			<td>
-				<a href="/notice/detail/${row.n_no}">${row.subject}</a>
+				<a href="detail/${row.n_no}">${row.subject}</a>
 			</td>
 			<td>관리자</td>
 			<td>${row.regdate}</td>
@@ -40,6 +42,6 @@
 총 ${cnt}개의 글
 <hr>
 	
-<!-- 본문영역 -->
+<!-- 본문 끝 -->
 
 <%@ include file="../footer.jsp" %>

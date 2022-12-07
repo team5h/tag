@@ -17,17 +17,30 @@ public class NoticeDAO {
 	@Autowired
 	SqlSession sqlSession;
 	
-	public int insert(NoticeDTO notice) {
-		return sqlSession.insert("notice.insert", notice);
+	public void insert(NoticeDTO notice) {
+		sqlSession.insert("notice.insert", notice);
 	}//insert() end
 	
 	public List<NoticeDTO> list() {
 		return sqlSession.selectList("notice.list");
 	}//list() end
 
-	public List<NoticeDTO> detail(int n_no) {		
+	public NoticeDTO detail(int n_no) {		
 		return sqlSession.selectOne("notice.detail", n_no);
 	}//detail() end
+	
+	public void update(NoticeDTO dto) {
+		try {			
+			sqlSession.update("notice.update", dto);
+
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+	}//update() end
+	
+	public void delete(int n_no) {
+		sqlSession.delete("notice.delete", n_no);
+	}//delete() end
 	
 	
 }//class end

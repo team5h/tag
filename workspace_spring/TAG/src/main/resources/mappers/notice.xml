@@ -4,8 +4,8 @@
 <mapper namespace="notice">
 
 	<insert id="insert" parameterType="kr.co.itwill.notice.NoticeDTO">
-		INSERT INTO notice(subject, regdate)
-		VALUES (#{subject}, (current_date));
+		INSERT INTO notice(subject, edit, regdate)
+		VALUES (#{subject}, #{edit}, (current_date))
 	</insert>
 	
 	<select id="list" resultType="kr.co.itwill.notice.NoticeDTO">
@@ -20,10 +20,9 @@
 		WHERE n_no=#{n_no}
 	</select>
 	
-	<!-- 
 	<update id="update" parameterType="kr.co.itwill.notice.NoticeDTO">
 		UPDATE notice
-		SET edit=#{edit}
+		SET subject=#{subject}, edit=#{edit}
 		WHERE n_no=#{n_no}
 	</update>
 	
@@ -31,6 +30,5 @@
 		DELETE FROM notice
 		WHERE n_no=#{n_no}
 	</delete>
-	 -->	
 	 
 </mapper>

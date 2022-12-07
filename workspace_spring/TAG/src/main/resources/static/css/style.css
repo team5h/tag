@@ -237,21 +237,26 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   .menu-icons .btn-custom-search {
     font-size: 16px;
     color: #000000;
-    margin-right: 20px; }
+    margin-right: 10px; }
   .menu-icons .user-profile {
     font-size: 20px;
     color: #000000;
-    margin-right: 20px; }
+    margin-right: 10px; }
     @media (max-width: 991.98px) {
       .menu-icons .user-profile {
         margin-right: 100px; } }
+  .menu-icons .like {
+  margin-right: 10px; }
   .menu-icons .cart {
+	/* margin-right: 15px; */
     color: #000000;
-    font-size: 20px; }
+    font-size: 20px; 
+    margin-right: 10px;}
     @media (max-width: 991.98px) {
       .menu-icons .cart {
         right: 80px; } }
     .menu-icons .cart .item-in-cart {
+    margin-right: 15px;
       position: absolute;
       font-size: 10px;
       line-height: 20px;

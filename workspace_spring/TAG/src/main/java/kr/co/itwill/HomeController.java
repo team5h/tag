@@ -12,18 +12,22 @@ public class HomeController {
 	}// default constructor
 	
 	
-	@RequestMapping("/home")
+	@RequestMapping("/")
 	public String home() {
 		return "index";
-	}
+	}//home() end
+	
+	@RequestMapping("mypage/mypageG")
+	public String myPage() {
+		return "mypage/mypageG";
+	}//myPage() end
 	
 	
-	/*
-	@RequestMapping("/home")
-	public String home() {
-		return "notice/list";
-	}
-	*/
+	@RequestMapping("mypage/updateG")
+	public String updateG() {
+		return "mypage/updateG";
+	}//updateG() end
+	
 	
 	
 	

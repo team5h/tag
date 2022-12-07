@@ -2,8 +2,8 @@
 
 <%@ include file="header.jsp" %>
 
-<!-- 본문영역 -->
+<!-- 본문 시작 -->
 
-<!-- 본문영역 -->
+<!-- 본문 끝 -->
 
 <%@ include file="footer.jsp" %>
