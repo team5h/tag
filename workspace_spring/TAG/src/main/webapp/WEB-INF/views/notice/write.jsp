@@ -11,7 +11,7 @@
 <h3 style="text-align: center;">글쓰기</h3>
 <br>
 <p>
-	<button type="button" onclick="location.href='list'">목록</button>
+	<button type="button" onclick="location.href='/notice/list'">목록</button>
 </p>
 
 <div>

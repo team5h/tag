@@ -17,16 +17,14 @@ public class HomeController {
 		return "index";
 	}//home() end
 	
-	@RequestMapping("mypage/mypageG")
-	public String myPage() {
-		return "mypage/mypageG";
-	}//myPage() end
+	
 	
 	
 	@RequestMapping("mypage/updateG")
 	public String updateG() {
 		return "mypage/updateG";
 	}//updateG() end
+	
 	
 	
 	

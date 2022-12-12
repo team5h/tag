@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="myticket">
+
+	<select id="list" resultType="kr.co.itwill.myticket.MyticketDTO">
+		SELECT tck_num, m_id, c_no, cnt, order_price, dis_price, d_fee, total_price, rec_name, rec_addr, rec_tel, msg, stus
+		FROM ticket_order
+		ORDER BY tck_num DESC
+	</select>
+	
+</mapper>

@@ -11,8 +11,8 @@
 <h3 style="text-align: center;">공지사항</h3>
 <br>
 <p>
-	<button type="button" onclick="location.href='write'">글쓰기</button>
-	<button type="button" onclick="location.href='list'">목록</button>
+	<button type="button" onclick="location.href='/write'">글쓰기</button>
+	<!-- <button type="button" onclick="location.href='/notice/list'">목록</button> -->
 </p>
 <div class="container">
 	<table class="table table-hover" border="1">

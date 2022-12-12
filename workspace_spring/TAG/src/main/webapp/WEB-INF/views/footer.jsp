@@ -9,7 +9,7 @@
       
       <!-- 푸터 -->
 
-	<div class="site-footer">
+	<div class="site-footer" style="clear: both;">
 		<div class="container">
 				<!-- <div class="col-12 copyright"> -->
 					<p>CONTACT US 
