@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@ include file="./ssi.jsp" %>
-<%@ include file="header.jsp" %>
+<%@ include file="../header.jsp" %>
 
 
 <style>
@@ -109,4 +109,4 @@ p {padding-bottom: 10px;}
 
 <!-- 본문영역 -->
 
-<%@ include file="footer.jsp" %>
+<%@ include file="../footer.jsp" %>

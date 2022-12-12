@@ -32,7 +32,7 @@ public class MemberGeneralCont {
 	// [로그인] - 일반 or 판매자 로그인 선택 페이지 연결
 	@RequestMapping("/loginForm")
 	public String loginForm() {
-		return "loginForm";
+		return "login/loginForm";
 	}//home() end
 	
 	
@@ -76,7 +76,7 @@ public class MemberGeneralCont {
 			// 로그인 성공
 			// 로그인 되면 세션값 저장
 			session.setAttribute("mem_grade", mem_grade);
-
+			session.setAttribute("s_m_id", id);
 			
 			Cookie cookie=null;
 			if(saveId!=null) {

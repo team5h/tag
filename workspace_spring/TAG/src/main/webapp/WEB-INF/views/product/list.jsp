@@ -288,7 +288,8 @@ function categoryList() {
 			<!-- list_aside 시작 -->
 			<div class="list_aside">
 				<div class="h3_title">
-				    <a href="#" onclick="location.href='/list.do'"><h3 style="text-decoration: underline;">All</h3></a>
+				    <!-- <a href="#" onclick="location.href='/list.do'"><h3 style="text-decoration: underline;">All</h3></a> -->
+				    <a href="#" onclick="location.href='/list.do'"><h3>All</h3></a>
 			        <a href="#" onclick="location.href='/listConcert'"><h3>Concert</h3></a>
 		        </div><!-- h3_title 끝 -->
 		        
