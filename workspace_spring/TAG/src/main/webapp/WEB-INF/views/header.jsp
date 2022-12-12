@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c"   uri="http://java.sun.com/jsp/jstl/core" %>
 
 <! doctype html>
 <html lang="ko">
@@ -16,27 +17,31 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
+	<script src="/js/jquery-3.4.1.min.js"></script>
+	<script src="/js/jquery.cookie.js"></script>
 
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/animate.min.css">
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<link rel="stylesheet" href="css/jquery.fancybox.min.css">
-	<link rel="stylesheet" href="fonts/icomoon/style.css">
-	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-	<link rel="stylesheet" href="css/aos.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/animate.min.css">
+	<link rel="stylesheet" href="/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+	<link rel="stylesheet" href="/fonts/icomoon/style.css">
+	<link rel="stylesheet" href="/fonts/flaticon/font/flaticon.css">
+	<link rel="stylesheet" href="/css/aos.css">
+	<link rel="stylesheet" href="/css/style.css">
 
-	<script src="js/jquery-3.4.1.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.animateNumber.min.js"></script>
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/jquery.fancybox.min.js"></script>
-	<script src="js/jquery.sticky.js"></script>
-	<script src="js/aos.js"></script>
-	<script src="js/custom.js"></script>
+	<script src="/js/popper.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/owl.carousel.min.js"></script>
+	<script src="/js/jquery.animateNumber.min.js"></script>
+	<script src="/js/jquery.waypoints.min.js"></script>
+	<script src="/js/jquery.fancybox.min.js"></script>
+	<script src="/js/jquery.sticky.js"></script>
+	<!-- <script src="/js/aos.js"></script> -->
+	<!-- <script src="/js/custom.js"></script> -->
+	
+	<!-- 스마트에디터 -->
+	<!-- <script src="/js/ckeditor/ckeditor.js"></script> -->
 
 	<title>TAG : Ticket And Goods</title>
 </head>
@@ -48,7 +53,7 @@
 			<input type="search" class="form-control" placeholder="Enter keyword to search...">
 			<button class="button">
 				<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-					<path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+					<a href=""><path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/></a>
 					<path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
 				</svg>
 			</button>
@@ -77,7 +82,7 @@
 
 			<div class="container position-relative">
 				<div class="site-navigation text-center dark">
-					<a href="home" class="logo menu-absolute m-0" style="font-size:20px;">TAG<span class="text-primary">.</span></a>
+					<a href="/home" class="logo menu-absolute m-0" style="font-size:20px;">TAG</a>
 
 					<ul class="js-clone-nav pl-0 d-none d-lg-inline-block site-menu">
 						<li class="active"><a href="home">HOME</a></li>
@@ -90,7 +95,7 @@
 							</ul>
 						</li>
 						<li class="has-children">
-							<a href="#">굿즈</a>
+							<a href="#" onclick="location.href='/list.do'">굿즈</a>
 							<ul class="dropdown">
 								<li><a href="checkout.html">전체보기</a></li>
 								<li><a href="elements.html">인기상품</a></li>
@@ -124,27 +129,108 @@
 
 
 
+					<!-- 네비바 -->
 					<div class="menu-icons">
-
+						
+						<!-- 검색 -->
 						<a href="#" class="btn-custom-search" id="btn-search">
-							<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
-								<path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+							<svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<g clip-path="url(#clip0_429_9118)">
+							<path d="M21 21L16.6569 16.6569M16.6569 16.6569C18.1046 15.2091 19 13.2091 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C13.2091 19 15.2091 18.1046 16.6569 16.6569Z" stroke="#292929" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+							</g>
+							<defs>
+							<clipPath id="clip0_429_9118">
+							<rect width="24" height="24" fill="white"/>
+							</clipPath>
+							</defs>
 							</svg>
 						</a>
-
+	
+						<!-- 프로필 -->
 						<a href="#" class="user-profile">
-							<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd" d="M13 14s1 0 1-1-1-4-6-4-6 3-6 4 1 1 1 1h10zm-9.995-.944v-.002.002zM3.022 13h9.956a.274.274 0 0 0 .014-.002l.008-.002c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664a1.05 1.05 0 0 0 .022.004zm9.974.056v-.002.002zM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+							<svg width="23" height="23" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<g clip-path="url(#clip0_429_9074)">
+							<path d="M3.99988 18C3.99988 15.7908 5.79074 14 7.99988 14H15.9999C18.209 14 19.9999 15.7908 19.9999 18V18C19.9999 19.1045 19.1044 20 17.9999 20H5.99988C4.89531 20 3.99988 19.1045 3.99988 18V18Z" stroke="#292929" stroke-width="1.5" stroke-linejoin="round"/>
+							<circle cx="11.9999" cy="6.99997" r="3" stroke="#292929" stroke-width="1.5"/>
+							</g>
+							<defs>
+							<clipPath id="clip0_429_9074">
+							<rect width="24" height="24" fill="white"/>
+							</clipPath>
+							</defs>
 							</svg>
 						</a>
-
+						
+						
+						
+						<!-- 좋아요 하트 -->
+						<a href="cart.html" class="like">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<g clip-path="url(#clip0_429_9297)">
+							<path d="M19.0711 13.1421L13.4142 18.799C12.6332 19.58 11.3668 19.58 10.5858 18.799L4.92894 13.1421C2.97632 11.1895 2.97632 8.02369 4.92894 6.07106C6.88157 4.11844 10.0474 4.11844 12 6.07106C13.9526 4.11844 17.1185 4.11844 19.0711 6.07106C21.0237 8.02369 21.0237 11.1895 19.0711 13.1421Z" stroke="#292929" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+							</g>
+							<defs>
+							<clipPath id="clip0_429_9297">
+							<rect width="24" height="24" fill="white"/>
+							</clipPath>
+							</defs>
+							</svg>
+						</a>
+						
+						
+						
+						
+						<!-- 장바구니 아이콘 -->
 						<a href="cart.html" class="cart">
-							<span class="item-in-cart">2</span>
-							<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-							</svg>
+							<!-- <span class="item-in-cart">2</span> --><!-- 장바구니 담으면 뜨는 숫자 -->
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<g clip-path="url(#clip0_429_9132)">
+							<path d="M4 9H20L19.1654 18.1811C19.0717 19.2112 18.208 20 17.1736 20H6.82643C5.79202 20 4.92829 19.2112 4.83464 18.1811L4 9Z" stroke="#292929" stroke-width="1.5" stroke-linejoin="round"/>
+							<path d="M8 11V8C8 5.79086 9.79086 4 12 4C14.2091 4 16 5.79086 16 8V11" stroke="#292929" stroke-width="1.5" stroke-linecap="round"/>
+							</g>
+							<defs>
+							<clipPath id="clip0_429_9132">
+							<rect width="24" height="24" fill="white"/>
+							</clipPath>
+							</defs>
+							</svg>					
 						</a>
+						
+						
+						
+						<!-- 로그인 하지 않은 상태 -->
+						<c:if test="${mem_grade == null}">
+							<a href="#" onclick="location.href='loginForm'">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<g clip-path="url(#clip0_429_9095)">
+							<path d="M9 4.00024H19V18.0002C19 19.1048 18.1046 20.0002 17 20.0002H9" stroke="#292929" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M12 15.0002L15 12.0002M15 12.0002L12 9.00024M15 12.0002H5" stroke="#292929" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+							</g>
+							<defs>
+							<clipPath id="clip0_429_9095">
+							<rect width="24" height="24" fill="white" transform="translate(0 0.000244141)"/>
+							</clipPath>
+							</defs>
+							</svg>
+							</a>
+						</c:if>
+						
+						<!-- 로그인 한 상태 -->
+						<c:if test="${mem_grade != null}">
+							<a href="#" onclick="location.href='logout.do'">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<g clip-path="url(#clip0_429_9096)">
+							<path d="M15 4.00098H5V18.001C5 19.1055 5.89543 20.001 7 20.001H15" stroke="#292929" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M16 15.001L19 12.001M19 12.001L16 9.00098M19 12.001H9" stroke="#292929" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+							</g>
+							<defs>
+							<clipPath id="clip0_429_9096">
+							<rect width="24" height="24" fill="white" transform="translate(0 0.000976562)"/>
+							</clipPath>
+							</defs>
+							</svg>
+							</a>
+						</c:if>
 
 					</div>
 
@@ -157,12 +243,13 @@
 		</div>
 	</nav>
 	
-	<!-- 헤더 -->
+	<!-- 헤더 끝 -->
 	
-	<div class="owl-carousel owl-single">
-  		<div class="untree_co-section">
-    		<div class="container">
-      			<div class="align-items-center">
+	
+	<!-- <div class="owl-carousel owl-single"> -->
+  		<!-- <div class="untree_co-section" style="padding-top:55px;"> -->
+    		<div class="container" style="padding-top:100px;">
+      		<!-- 	<div class="align-items-center"> -->
         	
         	
 	
