@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--  memberSeller  -->
+
+<mapper namespace="memberSeller">
+
+<!-- [로그인] 로그인 성공/실패 -->
+<select id="select"  resultType="String" parameterType="kr.co.itwill.memberSeller.MemberSellerDTO" >
+	SELECT mem_grade
+	FROM seller
+	WHERE p_id = #{p_id} AND p_pw = #{p_pw} AND mem_grade IN ('B', 'S')
+</select>
+
+
+<!-- [로그인] 아이디 중복 체크 -->
+<select id="idCheckS" parameterType="String" resultType="int">
+	SELECT COUNT(p_id) 
+	FROM seller 
+	WHERE p_id= #{p_id}
+</select>
+
+
+<!-- [회원가입] 이메일 중복 체크 -->
+<select id="emailScheck" parameterType="String" resultType="int">
+	SELECT COUNT(com_email) 
+	FROM seller 
+	WHERE com_email= #{com_email}
+</select>
+
+
+<!-- [회원가입] 회원등록 insert -->
+<insert id="joinS" parameterType="kr.co.itwill.memberSeller.MemberSellerDTO">
+INSERT INTO seller (p_id, p_pw, company, director, licence, com_zipcode, com_addr1, com_addr2, com_tel, com_email, bank, bank_num, regdate)
+VALUES (
+		 #{p_id}
+		 ,#{p_pw}
+		 ,#{company}
+		 ,#{director}
+		 ,#{licence}
+		 ,#{com_zipcode}
+		 ,#{com_addr1}
+		 ,#{com_addr2}
+		 ,#{com_tel}
+		 ,#{com_email}
+		 ,#{bank}
+		 ,#{bank_num}
+		 ,(current_date)
+		)
+</insert>
+
+
+
+
+</mapper>
