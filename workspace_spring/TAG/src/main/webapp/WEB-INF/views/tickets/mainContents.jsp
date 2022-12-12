@@ -1,14 +1,45 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c"   uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn"   uri="http://java.sun.com/jsp/jstl/functions"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>InputData</title>
-</head>
-<body>
+<div id="map1Fjsp">
+	<h2>좌석선택-가격할인-배송현장수령</h2>
+	<h4>스탠딩 1층</h4>
+	<p>스탠딩은 실제 좌석과 다르며 예매시 지정하는 번호가 입장 번호 순서입니다. 빠른 번호를 예매 할수록 입장 순서가 빨라집니다.</p>
+	<div id="standA" style="display: inline-block; margin-right:40px;">
+		<h4>스탠딩 A구역</h4>
+		<table style="border-spacing: 0;">
+			<tr>
+			<c:forEach var="seatA" begin="1" end="825" step="1">
+				<td>
+					<input type="button" id=btnA${seatA} name=btnA${seatA} value="${seatA}" onclick="standAdd(this, 'A', ${seatA})">
+				</td>
+				<c:if test="${seatA mod 25 == 0}">
+					<tr></tr>
+				</c:if>
+			</c:forEach>
+			</tr>
+		</table>
+	</div>
+	<div id="standB" style="display: inline-block;">
+		<h4>스탠딩 B구역</h4>
+		<table style="border-spacing: 0;">
+			<tr>
+			<c:forEach var="seatB" begin="1" end="825" step="1">
+				<td>
+					<input type="button" id=btnB${seatB} name=btnB${seatB} value="${seatB}" onclick="standAdd(this, 'B', ${seatB})">
+				</td>
+				<c:if test="${seatB mod 25 == 0}">
+				<!-- 테이블 한줄에 5줄씩 -->
+					<tr></tr>
+				</c:if>
+			</c:forEach>
+			</tr>
+		</table>
+	</div>
+</div><!-- map1Fjsp end -->
+
+<div id="map2Fjsp">
+	<h2>좌석선택-가격할인-배송현장수령</h2>
 	<h4>지정석 2층</h4>
 	<p>객석 2층은 지정좌석제입니다.</p>
 	<div id="rseatX" style="display: inline-block;">
@@ -32,7 +63,7 @@
 							<input type="button" id=btnX${seatX} name=btnX${seatX} value="${c}" onclick="rseatAdd(this, 'X', ${r}, ${seatX})">
 						</c:if>
 						<c:if test="${c == (15-nullX[r-1]+1)}">
-							<c:out value="${r}열"/>
+							<button disabled>${r}</button>
 							<tr></tr>
 						</c:if>
 					</td>
@@ -84,7 +115,7 @@
 				<c:forEach var="nullYRtd" begin="1" end="${nullYR[r-1]+1}" step="1">
 					<td>
 						<c:if test="${nullYRtd == nullYR[r-1]+1 }">
-							<c:out value="${r}열"/>
+							<button disabled>${r}</button>
 							<tr></tr>
 						</c:if>
 					</td>
@@ -121,5 +152,122 @@
 			</tr>
 		</table>
 	</div><!-- id="rseatZ" end -->
-</body>
-</html>
+</div><!-- map2Fjsp end -->	
+
+<div id="ticketSalejsp">
+	<h2>좌석선택-가격할인-배송현장수령</h2>
+	<h3>* 가격/할인 *</h3>
+	<table>
+	<tr>
+		<td>등급</td>
+		<td>할인명</td>
+		<td>할인금액</td>
+		<td>매수</td>
+		<td>설명</td>
+	</tr>
+	<tr>
+		<td>R석</td>
+		<td>
+			<select name="disSelectR">
+				<option value="N">-선택없음-</option>
+				<option value="J">장애인 할인</option>
+				<option value="K">국가유공자 할인</option>
+			</select>
+		</td>
+		<td>
+			<input type="text" id="disPriceR" value="0원">
+		</td>
+		<td>
+			<select name="disCntR">
+				<option value="0">-선택없음-</option>
+			</select>
+		</td>
+		<td>
+			<input type="text" id="disDesR" value="일반 기본가">
+		</td>
+	</tr>
+	<tr>
+		<td>S석</td>
+		<td>
+			<select name="disSelectS">
+				<option value="N">-선택없음-</option>
+				<option value="J">장애인 할인</option>
+				<option value="K">국가유공자 할인</option>
+			</select>
+		</td>
+		<td>
+			<input type="text" id="disPriceS" value="0원">
+		</td>
+		<td>
+			<select name="disCntS">
+				<option value="0">-선택없음-</option>
+			</select>
+		</td>
+		<td>
+			<input type="text" id="disDesS" value="일반 기본가">
+		</td>
+	</tr>
+	<tr>
+		<td>A석</td>
+		<td>
+			<select name="disSelectA">
+				<option value="N">-선택없음-</option>
+				<option value="J">장애인 할인</option>
+				<option value="K">국가유공자 할인</option>
+			</select>
+		</td>
+		<td>
+			<input type="text" id="disPriceA" value="0원">
+		</td>
+		<td>
+			<select name="disCntA">
+				<option value="0">-선택없음-</option>
+			</select>
+		</td>
+		<td>
+			<input type="text" id="disDesA" value="일반 기본가">
+		</td>
+	</tr>
+	</table>
+</div>
+
+<div id="ticketDeliveryjsp">
+	<h2>좌석선택-가격할인-배송현장수령</h2>
+	<h3>* 배송선택/주문자확인 *</h3>
+	<table>
+	<tr>
+		<td>수령방법선택</td>
+		<td>
+			<input type="radio" id="dlvBtn" name="deliverBtn" value="3000" onclick="dlvSelected()"><!-- value 3000원 -->
+ 				<label for="dlvBtn">배송</label><br>
+ 				<input type="radio" id="pUpBtn" name="deliverBtn" value="0" onclick="pUpSelected()" checked><!-- value 0원 -->
+ 				<label for="pUpBtn">현장수령</label><br>
+		</td>
+	</tr>
+	<tr>
+		<td colspan='2'>주문자확인</td>
+	</tr>
+	<tr>
+		<td><label for="rec_name">이름</label></td>
+		<td><input type="text" id="rec_name" value="정다슬"></td>
+	</tr>
+	<tr>
+		<td><label for="rec_tel">연락처</label></td>
+		<td><input type="text" id="rec_tel" value="010-1234-1234"></td>
+	</tr>
+	<!-- 
+	<tr>
+		<td><label for="rec_email">이메일</label></td>
+		<td><input type="text" id="rec_email" value="mktmf1226@gmail.com"></td>
+	</tr>
+	 -->
+	<tr>
+		<td><label for="rec_addr">받는주소</label></td>
+		<td><input type="text" id="rec_addr" value="서울시 관악구"></td>
+	</tr>
+	<tr>
+		<td><label for="msg">배송메세지</label></td>
+		<td><input type="text" id="msg" value="배송 전 연락바랍니다."></td>
+	</tr>				
+	</table>
+</div><!-- ticketDeliveryjsp end -->

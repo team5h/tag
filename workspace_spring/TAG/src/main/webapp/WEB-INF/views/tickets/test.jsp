@@ -13,20 +13,23 @@
 		.on{background:black !important;} /* class="on" 클릭시 색 변경 */
 		#mapContainer input{border:none; font-size:0px; width:12px; height:12px; margin:0; padding:0;} /* font-size:0px; : id="mapContainer"의 value 안보이게 하기 */
 		
-		table{font-size:10px; border-spacing: 0;}
-		td{text-align:right; vertical-align:bottom; }
+		#mapContainer table{font-size:10px; border-spacing: 0;}
+		#mapContainer td{text-align:right; vertical-align:bottom; }
 		
 		.StandingR{background:palegreen;} /* 스탠딩R석 색상 */
 		.R{background:mediumslateblue;} /* 지정좌석R석 색상 */
 		.S{background:dodgerblue;} /* 지정좌석S석 색상 */
 		.A{background:darkcyan;} /* 지정좌석A석 색상 */
+		
+		#seatAddForm td {border: 1px solid #444444; padding: 0 8px;}
+		#seatAddForm span {display:block; margin:0 !important;}
+		#ticketAddForm td {border: 1px solid #444444; padding: 0 8px;}
 	</style>
 </head>
 <body>
 
 <h3>* 티켓 예매 *</h3>
-<button id="map1F" name="map1F">1층 맵</button>
-<button id="map2F" name="map2F">2층 맵</button>
+
 <br><br>
 <div id="mapContainer">
 <!-- Ajax 영역 시작 -->
@@ -72,13 +75,166 @@
 </div>
 <br><br>
 
-<form>
-	좌석 선택 : <div id="panel"></div>
+<form id="seatAddForm">
+	<table style="border:1px solid black; height:500px; width: 348px;">
+	<tr>
+		<td>
+			공연장 미니맵<br>
+			-> 구역이동은 미니맵을 이용해주세요
+		</td>
+	</tr>
+	<tr>
+		<td>
+			미니맵 이미지
+			<button type="button" id="map1F" name="map1F">1층 맵</button>
+			<button type="button" id="map2F" name="map2F">2층 맵</button>
+		</td>
+	</tr>
+	<tr>
+		<td>좌석등급 / 가격</td>
+	</tr>
+	<tr>
+		<td>
+			지정석 88,000원<br>
+			스탠딩석 88,000원
+		</td>
+	</tr>
+	<tr>
+		<td>선택한 좌석</td>
+	</tr>
+	<tr>
+		<td>
+			<div id="panel" style="height:80px; overflow-y:scroll;"></div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<button type="button" id="reSelect" name="reSelect" onclick="reSelectFN()">다시 선택</button>
+			
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<button type="button">좌석 선택 완료 ></button>
+		</td>
+	</tr>
+	</table>
 </form>
 
-<button id="reSelect" name="reSelect" onclick="reSelect()">다시 선택</button>
+<form id="ticketAddForm">
+	<input type="hidden" id="" value="할인코드">
+	<input type="hidden" id="" value="받는사람">
+	<input type="hidden" id="" value="받는주소">
+	<input type="hidden" id="" value="핸드폰번호">
+	<input type="hidden" id="" value="배송메세지">
+	<table style="border:1px solid black; height:500px; width: 348px;">
+	<tr>
+		<td>
+			공연포스터 이미지
+		</td>
+		<td>
+			공연이름<br>
+			공연정보
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			My 예매정보
+		</td>
+	</tr>
+	<tr>
+		<td>날짜</td>
+		<td>2022년 12월 15일(금)</td>
+	</tr>
+	<tr>
+		<td>시간</td>
+		<td>16시 00분</td>
+	</tr>
+	<tr>
+		<td>매수</td>
+		<td>3매</td>
+	</tr>
+	<tr>
+		<td>선택한 좌석</td>
+		<td>
+			<div id="addedSeat" style="height:80px; overflow-y:scroll;">
+				S석 2층 Z구역 2열 5번<br>
+				S석 2층 Z구역 2열 5번<br>
+				S석 2층 Z구역 2열 5번<br>
+				S석 2층 Z구역 2열 5번<br>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>티켓금액</td>
+		<td>110,000원</td>
+	</tr>
+	<tr>
+		<td>배송료</td>
+		<td>0원 | 현장수령</td>
+	</tr>
+	<tr>
+		<td>할인금액</td>
+		<td>3,000원</td>
+	</tr>	
+	<tr>
+		<td>총 결제금액</td>
+		<td>111,000원</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<button type="button">이전단계</button>
+			<button type="button">다음단계</button>
+		</td>
+	</tr>
+	</table>
+</form>
 
-
+<h3>* 가격/할인 *</h3>
+<form>
+	<table>
+	<tr>
+		<td>등급</td>
+		<td>할인명</td>
+		<td>할인금액</td>
+		<td>매수</td>
+		<td>설명</td>
+	</tr>
+	<tr>
+		<td>R석</td>
+		<td>
+			<select>
+				<option>-선택없음-</option>
+				<option>장애인할인</option>
+				<option>국가유공자 할인</option>
+			</select>
+		</td>
+		<td>0원</td>
+		<td>
+			<select>
+				<option>-선택없음-</option>
+				<option>1매</option>
+				<option>2매</option>
+			</select>
+		</td>
+		<td>할인 없음</td>
+	</tr>
+	<tr>
+		<td>S석</td>
+		<td>장애인할인</td>
+		<td>24,000원</td>
+		<td>1매</td>
+		<td>30% 할인</td>
+	</tr>
+	<tr>
+		<td>A석</td>
+		<td>국가유공자 할인</td>
+		<td>48,000원</td>
+		<td>2매</td>
+		<td>30% 할인</td>
+	</tr>
+	</table>
+</form>
 
 <!-- JavaScript -->
 <script type="text/javascript">
@@ -121,6 +277,11 @@ $(document).ready(function(){
 });//ready() end
 
 
+
+/* ------------------------ test start ---------------------------------- */
+
+
+/* ------------------------ test end ---------------------------------- */
 
 
 
@@ -243,10 +404,6 @@ $(document).ready(function(){
 		});//ajax() end
 	});//click() end
 });//ready() end
-
-/* ------------------------ test start ---------------------------------- */
-
-/* ------------------------ test end ---------------------------------- */
 
 
 //스탠딩 좌석을 누르면
