@@ -28,7 +28,7 @@
 @mixin caret($direction: down) {
   @if $enable-caret {
     &::after {
-      display: inline-block;
+      display: none;
       margin-left: $caret-spacing;
       vertical-align: $caret-vertical-align;
       content: "";

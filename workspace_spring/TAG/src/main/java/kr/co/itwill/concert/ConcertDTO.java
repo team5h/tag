@@ -1,6 +1,7 @@
 package kr.co.itwill.concert;
 
 public class ConcertDTO {
+
 	private int c_no;
 	private String title;
 	private String date;
@@ -172,3 +173,4 @@ public class ConcertDTO {
 	
 	
 }//class end
+

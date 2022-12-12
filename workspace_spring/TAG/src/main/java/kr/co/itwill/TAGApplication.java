@@ -11,11 +11,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
+
 @SpringBootApplication
 public class TAGApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(TAGApplication.class, args);
+
 	}//main() end
 	
 	   @Bean
@@ -35,6 +37,7 @@ public class TAGApplication {
 	   public SqlSessionTemplate sqlSession(SqlSessionFactory factory) {
 	      return new SqlSessionTemplate(factory);
 	   }//sqlSession() end
+
 
 
 }//class end

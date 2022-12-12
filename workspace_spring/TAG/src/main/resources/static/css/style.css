@@ -4,7 +4,6 @@
 * Author URI: https://untree.co/
 * License: https://creativecommons.org/licenses/by/3.0/
 */
-@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css); 
 body {
   font-family: "Muli", sans-serif;
   line-height: 1.6;
@@ -70,7 +69,7 @@ a.text-primary {
 h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   font-family: Georgia, "Noto Sans KR", serif;
   color: black; 
-}
+  }
 
 .btn {
   padding-top: 15px;
@@ -380,11 +379,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
             -ms-transform: translateY(-50%);
             transform: translateY(-50%);
             font-family: 'icomoon'; }
-            
-            .site-nav .site-navigation .site-menu .has-children > a:active {
-            
-            }
-            
         .site-nav .site-navigation .site-menu .has-children .dropdown {
           visibility: hidden;
           opacity: 0;

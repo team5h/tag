@@ -8,6 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class HomeController {
 
 	public HomeController() {
+
 		System.out.println("--------HomeController() 객체 생성");
 	}// default constructor
 	
