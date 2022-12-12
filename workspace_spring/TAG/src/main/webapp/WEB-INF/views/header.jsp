@@ -95,7 +95,7 @@
 							</ul>
 						</li>
 						<li class="has-children">
-							<a href="#">굿즈</a>
+							<a href="#" onclick="location.href='/list.do'">굿즈</a>
 							<ul class="dropdown">
 								<li><a href="checkout.html">전체보기</a></li>
 								<li><a href="elements.html">인기상품</a></li>

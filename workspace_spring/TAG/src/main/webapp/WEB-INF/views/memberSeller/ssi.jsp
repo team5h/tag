@@ -2,5 +2,8 @@
 
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
+<%-- 한샘전용 css --%>
 <link rel="stylesheet" href="/css/saem.css">
-	
+
+<%-- 강선 전용 css --%>
+<link rel="stylesheet" href="/css/kangsun.css">

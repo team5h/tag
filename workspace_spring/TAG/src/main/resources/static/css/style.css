@@ -226,6 +226,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   color: #000000; }
 
 .cart {
+	
   right: 0;
   top: 0px; }
 
@@ -243,7 +244,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
     margin-right: 10px; }
     @media (max-width: 991.98px) {
       .menu-icons .user-profile {
-        margin-right: 100px; } }
+        margin-right: 10px; } }
   .menu-icons .like {
   margin-right: 10px; }
   .menu-icons .cart {
@@ -253,9 +254,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
     margin-right: 10px;}
     @media (max-width: 991.98px) {
       .menu-icons .cart {
-        right: 80px; } }
+        margin-right: 10px; } }
     .menu-icons .cart .item-in-cart {
-    margin-right: 15px;
+    margin-right: 10px;
       position: absolute;
       font-size: 10px;
       line-height: 20px;
@@ -267,6 +268,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
       background: #C05B9F; }
     .menu-icons .cart:hover {
       color: #ffffff; }
+     
+      
+
 
 .btn-custom-search {
   color: #000000; }
@@ -816,11 +820,15 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
     min-height: 450px; }
 
 .untree_co-section {
-  padding: 100px 0;
-  position: relative; }
+ /*  padding: 100px 0; */
+  position: relative; 
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-top: 100px;
+  margin-bottom: 100px;}
   @media (max-width: 991.98px) {
     .untree_co-section {
-      padding: 50px 0; } }
+      padding: 0; } }
   .untree_co-section .heading h3 {
     font-size: 35px;
     color: #000000; }
@@ -1548,7 +1556,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 
 .site-footer {
   font-size: 14px;
-  padding: 100px 0 70px 0; }
+  padding: 30px 0 10px 0; }
   .site-footer a {
     color: #000000;
     position: relative;
@@ -1603,3 +1611,13 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
       bottom: 0;
       position: absolute;
       background: #000000; }
+
+      
+      
+      
+      
+-- loginForm css
+
+.my-div {
+	font-size : 20px;
+}

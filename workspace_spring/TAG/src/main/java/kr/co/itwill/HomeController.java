@@ -8,12 +8,16 @@ import org.springframework.web.servlet.ModelAndView;
 public class HomeController {
 
 	public HomeController() {
-		System.out.println("----------------HomeController()");
+
+		System.out.println("--------HomeController() 객체 생성");
 	}// default constructor
+	
+	
+	//http://localhost:8080/home
 	
 	@RequestMapping("/home")
 	public String home() {
 		return "index";
-	}
+	}//home() end
 
-}
+}//class end
