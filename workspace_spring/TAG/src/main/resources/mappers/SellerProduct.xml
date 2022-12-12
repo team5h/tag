@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+     
+<mapper namespace="sellerProduct">
+	
+	<insert id="insert" parameterType="kr.co.itwill.memberSeller.SellerProductDTO">
+    	INSERT INTO product(category, c_no, p_id, pro_name, stock, color, size, price, edit, regdate, postername)
+		VALUES (#{category}, #{c_no}, #{p_id}, #{pro_name}, #{stock}, #{color}, #{size}, #{price}, #{edit}, (current_date), #{postername})
+	</insert>
+	
+	<select id="concertlist" resultType="kr.co.itwill.concert.ConcertDTO">
+		SELECT  c_no, title, date
+		FROM	concert
+		ORDER BY date
+	</select>
+	
+	<select id="productlist" resultType="kr.co.itwill.memberSeller.SellerProductDTO">
+		<!-- 
+		SELECT pro_no, status, pro_name, price, edit, likecnt 
+		FROM product
+		-->
+		SELECT p.pro_no,pro_name, stock, color, size, price, regdate, edit, category, status, postername, likecnt, count(o.pro_no) AS sales, (stock-(count(o.pro_no))) AS afstock
+		FROM product P LEFT JOIN order_detail O
+               		   ON P.pro_no = O.pro_no
+		GROUP BY p.pro_no
+		ORDER BY p.pro_no DESC
+	</select>
+	<!-- 
+	<select id="afstock" resultType="kr.co.itwill.memberSeller.SellerProductDTO" parameterType="int">    
+		SELECT stock - (SELECT COUNT(*) FROM order_detail GROUP BY pro_no HAVING pro_no = #{pro_no}) AS afstock
+		FROM product 
+		WHERE pro_no= #{pro_no}
+	</select>
+
+	<select id="sales" resultType="kr.co.itwill.memberSeller.SellerProductDTO" parameterType="int">
+		SELECT COUNT(*) AS sales
+		FROM order_detail 
+		GROUP BY pro_no 
+		HAVING pro_no = #{pro_no}
+	</select>
+ 	-->
+	<delete id="chkdelete" parameterType="kr.co.itwill.memberSeller.SellerProductDTO">
+		DELETE FROM product
+		WHERE pro_no IN  ( 
+							<foreach collection="chkList" item="value" separator=",">
+								#{value}
+							</foreach>
+						  )
+	</delete>
+	
+	<update id="productstatusup" parameterType="kr.co.itwill.memberSeller.SellerProductDTO">
+		UPDATE product 
+		SET status = #{status}
+		WHERE pro_no = #{pro_no}
+	</update>
+	
+	<select id="productMdetail" parameterType="int" resultType="kr.co.itwill.memberSeller.SellerProductDTO">
+		SELECT p.pro_name, likecnt, postername, price, edit, stock, count(o.pro_no) AS sales, (stock-(count(o.pro_no))) as afstock
+        FROM product P JOIN order_detail O
+                       ON p.pro_no = o.pro_no
+        GROUP BY O.pro_no
+        HAVING o.pro_no = #{pro_no}
+	</select>
+	
+	<select id="productread" resultType="kr.co.itwill.memberSeller.SellerProductDTO" parameterType="int">
+		SELECT *
+		FROM product
+		WHERE pro_no = #{pro_no}
+	</select>
+	
+	<update id="productupdate" parameterType="kr.co.itwill.memberSeller.SellerProductDTO">
+		UPDATE product
+		SET  pro_name = #{pro_name}
+			,postername = #{postername}
+			,price = #{price}
+			,edit = #{edit}
+			,category = #{category}
+			,color = #{color}
+			,size = #{size}
+			,stock = #{stock}
+		WHERE pro_no = #{pro_no}
+	</update>
+	
+	<delete id="productdelete" parameterType="int">
+		DELETE FROM product
+		WHERE pro_no = #{pro_no}
+	</delete>
+	
+	<select id="posternameread" resultType="String">
+		SELECT postername
+		FROM product
+		WHERE pro_no = #{pro_no}
+	</select><!-- 파일 이름 조회 -->
+	
+	<select id="orderlist" resultType="kr.co.itwill.productOrder.ProdcutOrderDTO">
+		SELECT PO.order_num, m_id, rec_name, rec_addr, rec_tel, sum(detail_cnt) as total_cnt , pO.total_price, substr(PO.order_num,1,8) as order_date, stus,p_id
+	    FROM product_order PO JOIN order_detail O
+	                         ON PO.order_num = O.order_num
+	                         JOIN product p 
+	                         ON p.pro_no = o.pro_no
+	    GROUP BY pO.order_num
+	    HAVING p.p_id= #{p_id}
+	</select>
+	
+</mapper>

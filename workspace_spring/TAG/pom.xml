@@ -5,10 +5,10 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.0.0</version>
+		<version>2.7.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>co.kr</groupId>
+	<groupId>kr.co</groupId>
 	<artifactId>itwill</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
@@ -49,13 +49,14 @@
 		</dependency>
 		
 		
-<!-- 사용자 지정 의존성 추가 시작 -->
+		<!-- 사용자 지정 의존성 추가 시작 -->
 		
 		<!-- 뷰페이지 관련 라이브러리(JSP, JSTL) -->
 		<!-- JSP -->
 		<dependency>
          	<groupId>org.apache.tomcat.embed</groupId>
          	<artifactId>tomcat-embed-jasper</artifactId>
+         	<version>9.0.58</version>
       	</dependency>
 		
 		
@@ -79,6 +80,22 @@
 			<groupId>commons-fileupload</groupId>
 			<artifactId>commons-fileupload</artifactId>
 			<version>1.4</version>
+		</dependency>
+		
+		
+		<!-- summernote용 -->
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+		    <groupId>commons-io</groupId>
+		    <artifactId>commons-io</artifactId>
+		    <version>2.11.0</version>
+		</dependency>
+		
+		
+		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+		<dependency>
+		    <groupId>com.google.code.gson</groupId>
+		    <artifactId>gson</artifactId>
 		</dependency>
 		
 
