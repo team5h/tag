@@ -22,11 +22,11 @@ public class MylikeDAO {
 	}//list() end
 	
 	
-	public List<Map<String, Object>> list_c(String s_m_id){
+	public List<Map<String, String>> list_c(String s_m_id){
 		return sqlSession.selectList("mylike.list_c", s_m_id);
 	}
 
-	public List<Map<String, Object>> list_p(String s_m_id){
+	public List<Map<String, String>> list_p(String s_m_id){
 		return sqlSession.selectList("mylike.list_p", s_m_id);
 	}
 	

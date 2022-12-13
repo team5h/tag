@@ -1,5 +1,6 @@
 package kr.co.itwill.mylike;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -43,19 +44,57 @@ public class MylikeCont {
 		List<MylikeDTO> list=mylikeDao.list(s_m_id);
 		mav.addObject("list", list);
 		
-		List<Map<String, Object>> list_c=mylikeDao.list_c(s_m_id);
-		mav.addObject("list_c", list_c);
-		//8세 이상 / prep.png / 전R석
-		//만 7세이상 / Maksim.jpg / 전 R석 / 가격 R132000 / 22.12.24 ~ 22.12.25
-		/*for(int i=0; i<list_c.size(); i++) {
-			System.out.println((String)list_c.get(i));
+		
+		//공연 이미지만 추출하기
+		//결과값 prep.png, Maksim.jpg 모으기
+		List<String> imglist_c=new ArrayList<>();		
+		//-----------------------------------------------------------------------
+		List<Map<String, String>> list_c=mylikeDao.list_c(s_m_id);
+		//DB에서 가져온 정보
+		//{like_li=1, edit=8세 이상 / prep.png / 전R석, like_cd=C, lno=5, m_id=daseul}
+		//{like_li=4, edit=만 7세이상 / Maksim.jpg / 전 R석 / 가격 R132000 /  22.12.24 ~ 22.12.25, like_cd=C, lno=4, m_id=daseul}
+		//System.out.println("------"+list_c.size()); //DB에서 가져온 행의 갯수
+		
+		
+		//DB에서 가져온 정보(list_c)에서 "prep.png"정보만 추출하기
+		for(int i=0; i<list_c.size(); i++) {
+			//System.out.println(list_c.get(i));
+			//DB에서 가져온 정보(list_c)는 자료형이 Map이기 때문에, 문자열로 형변환 해야 한다(참조 46행의 List<Map<String, String>>)
+			//왜? 문자열에서 내가 원하는 정보만 추출하기 위해서
+			//"{like_li=1, edit=8세 이상 / prep.png / 전R석, like_cd=C, lno=5, m_id=daseul}"
+			String concert=list_c.get(i).toString();			
+			//System.out.println(concert);
 			
+			
+			//concert변수에서 ,를 기준으로 문자열 분리하기
+			//{like_li=1
+			// edit=8세 이상 / prep.png / 전R석
+			//		 like_cd=C
+			//		 lno=5
+			//		 m_id=daseul}
+			String[] c=concert.split(",");
+			//for(int j=0; j<c.length; j++) {
+			//	System.out.println(c[j]);
+			//}
+			
+			//c[1]값에서 "prep.png" 추출하기 위해서 / 를 기준으로 문자열 분리하기
+			String[] d=c[1].split("/");
+			//for(int j=0; j<d.length; j++) {
+			//	System.out.println("#" + d[j].trim() + "#");
+			//}
+			
+			// /기호 앞뒤의 공백을 제거한후 imglist_c변수에 추가하기(50행 변수 참조)
+			imglist_c.add(d[1].trim());
 		}//for end
-		*/
+		
+		mav.addObject("imglist_c", imglist_c);
+		//-------------------------------------------------------------------------
 		
 		
 		
-		List<Map<String, Object>> list_p=mylikeDao.list_p(s_m_id);
+		
+		
+		List<Map<String, String>> list_p=mylikeDao.list_p(s_m_id);
 		mav.addObject("list_p", list_p);
 		
 		

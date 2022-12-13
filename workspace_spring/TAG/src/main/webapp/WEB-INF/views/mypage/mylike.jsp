@@ -121,14 +121,12 @@
 		<table border="1">
 		<tr>
 			
-			<c:forEach var="row" items="${list_c}" varStatus="vs">
-			*<c:set var="a" value="${row.edit}"></c:set>*<br>
-			*${a}<br>
-			*${fn:split(a, '/')}*<br>
+			<c:forEach var="row" items="${imglist_c}" varStatus="vs">
+			
 				<td>
 					<c:choose>
-						<c:when test="${row.edit != '-'}">
-							<img src="/storage/${row.edit}" width="100px">
+						<c:when test="${row != '-'}">
+							<img src="/storage/${row}" width="100px">
 						</c:when>
 						<c:otherwise>
 							등록된 사진 없음!!<br>

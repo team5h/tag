@@ -13,7 +13,6 @@
     <fullyQualifiedTypeName name="org.mybatis.spring.SqlSessionTemplate"/>
     <fullyQualifiedTypeName name="javax.servlet.ServletContext"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
-    <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
@@ -47,11 +46,15 @@
     <fullyQualifiedTypeName name="kr.co.itwill.myticket.MyticketDTO"/>
     <fullyQualifiedTypeName name="kr.co.itwill.myproduct.MyproductDAO"/>
     <fullyQualifiedTypeName name="kr.co.itwill.myproduct.MyproductDTO"/>
-    <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="kr.co.itwill.mylike.MylikeDAO"/>
     <fullyQualifiedTypeName name="kr.co.itwill.mylike.MylikeDTO"/>
     <fullyQualifiedTypeName name="kr.co.itwill.product.ProductDTO"/>
+    <fullyQualifiedTypeName name="kr.co.itwill.concert.ConcertDTO"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
 </qualifiedTypeNameHistroy>
